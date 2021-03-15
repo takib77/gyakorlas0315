@@ -1,21 +1,28 @@
 <table class="table">
     <thead>
         <tr>
-            <th></th>
-            <th></th>
-            <th></th>
+            <th>#</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Featured</th>
+            <th>Active</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td scope="row"></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td scope="row"></td>
-            <td></td>
-            <td></td>
+        <tr *ngFor="let product of products">
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.featured }}</td>
+            <td>{{ product.active }}</td>
+            <td>
+                <button (click)="onDelete(product)" type="button" class="btn btn-danger">
+                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                </button>
+            </td>
         </tr>
     </tbody>
 </table>

@@ -1,1 +1,1 @@
-<app-product-list></app-product-list>
+<app-product-list (delete)="deleteItem($event)" [products]="productList$ | async"></app-product-list>
